@@ -1,0 +1,51 @@
+{
+    "openapi":"3.0.0",
+    "info": {
+        "title":"Documentação Swagger - desafio Chapter II Ignite  ",
+        "Description":"Documentação Swagger - desafio Chapter II Ignite trilha NodeJs",
+        "version": "1.0.0",
+        "contact":{
+            "email":"ismarpp.santos@gmail.com"
+        }
+    },
+    "paths":{
+        "/users":{
+            "post":{
+                "tags":["Users"],
+                "sumary":"Criar usuário",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "admin":{
+                                        "type":"boolean"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    }
+                                },
+                                "example":{
+                                    "name":"user name",
+                                    "admin":"yes || no",
+                                    "email":"user@email.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description":"created"
+                    }
+                }
+            }
+        }
+            
+        }
+    }
+    

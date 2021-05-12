@@ -10,16 +10,17 @@ class ListAllUsersUseCase {
 
   execute({ user_id }: IRequest): User[] {
     const foundUser = this.usersRepository.findById(user_id)
-    if(!foundUser) {
-      throw new Error("unuário inexistente")
-    }
+    if(!foundUser) 
+      throw new Error("unuário inexistente");
+   
 
-    if(foundUser.admin){
-      throw new Error("vc precisa ser administrador para acessar esse recurso")
+    if(!foundUser.admin)
+      throw new Error("vc precisa ser administrador para acessar esse recurso");
 
-      const users = this.usersRepository.list();
-      return users
-    }
+      
+   
+    const users = this.usersRepository.list();
+      return users;
   }
 }
 
